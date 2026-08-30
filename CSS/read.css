@@ -1,0 +1,184 @@
+/* BROWSER STYLES RESET */
+
+@charset "UTF-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/*developer style.css */
+*, *:before, *:after {box-sizing: inherit;}  
+
+
+/* General */
+
+html {
+    font-size: 1rem;
+    height: 100%;
+    box-sizing: border-box; 
+    font-family: 'Calibri', sans-serif; 
+    scroll-behavior: smooth;
+}
+body {
+    display: flex; 
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    gap: 1rem;  
+    min-height: 100vh;;
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+    line-height: 1.5rem;
+    color: #013;
+    background-color: #fff;
+    border: solid thick;
+    overflow: auto;  
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f5f5f5;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+main {
+    display: flex; 
+    flex-flow: column nowrap;
+    justify-content: space-around; 
+    gap: 1rem; 
+    width: 100%; 
+    min-height: 0;
+}
+footer {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f5f5f5;
+    justify-content: space-around;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+} 
+main, header, footer {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin: 0;
+}
+h1 {font-size: 2.5rem;
+    color: darkred;
+    font-weight: bold;
+}
+
+/* Details */
+
+details {
+    flex: 1 1 auto;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+    transition: transform 0.3s ease-in-out; 
+}
+details:hover {transform: scale(1.04);}
+
+summary {
+    font-size: 2rem;
+    font-weight: bold;
+    list-style: none;
+}
+summary::before {
+    content: '▶'; 
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-right: 1.8rem;
+    transition: transform 0.3s ease-out;
+    }  
+ details[open] summary::before {
+    transform: rotate(90deg);
+    }
+
+/* List */
+
+ul {
+    list-style-position: outside;
+    list-style-type: square;
+}
+li {
+    margin: 1.7rem;
+    padding-left: 0.7rem;
+    margin-right: 0;
+    text-align: left;
+}
+li::marker {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+/* Anchors */
+
+a { font-size: 1.4rem;
+    font-weight: bold;
+    color: #013;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent; 
+    outline: none;
+}
+a:hover {color: darkred;}
+a:active {text-decoration: underline;
+        text-decoration-style: dotted;
+}
+
+footer a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover {
+    color: darkred;
+}
+footer a:active {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px){
+    html {font-size: 1.25rem; }
+     a { font-size: 1.6rem;}
+    summary {text-align: center;}
+    ul {list-style-type: none;}
+    li {text-align: center;}
+}
+
+@media only screen and (min-width: 768px) {
+    html {font-size: 1.5rem; }
+     a { font-size: 1.6rem;}
+    summary {text-align: center;}
+    ul {list-style-type: none;}
+    li {text-align: center;}
+}
+
+

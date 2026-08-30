@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"> 
+    <meta   name="viewport" 
+            content="width=device-width initial-scale=1"> 
+    <link rel="stylesheet" href="../CSS/dictionary.css"> 
+    <script src="../main.js"></script>
+    <title>Dictionary</title>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Open dialog on button click
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("button.open");
+      if (!btn) return;
+
+      const container = btn.closest("div");
+      const dialog = container?.querySelector("dialog");
+      if (dialog) {
+        dialog.showModal();
+        dialog.scrollTop = 0;
+        // Force reflow before adding "visible" for animation
+        requestAnimationFrame(() => dialog.classList.add("visible"));
+      }
+    });
+
+    // Overlay click closes with animation
+    document.querySelectorAll("dialog").forEach((dialog) => {
+      dialog.addEventListener("click", (e) => {
+        const rect = dialog.getBoundingClientRect();
+        const inside =
+          e.clientX >= rect.left &&
+          e.clientX <= rect.right &&
+          e.clientY >= rect.top &&
+          e.clientY <= rect.bottom;
+
+        if (!inside) {
+          dialog.classList.add("closing");
+          dialog.classList.remove("visible");
+          setTimeout(() => {
+            dialog.close();
+            dialog.classList.remove("closing");
+          }, 500); // match CSS transition duration
+        }
+      });
+
+      // Animate built-in close buttons too
+      dialog.querySelectorAll("form[method='dialog'] button").forEach((btn) => {
+        btn.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          dialog.classList.add("closing");
+          dialog.classList.remove("visible");
+          setTimeout(() => {
+            dialog.close();
+            dialog.classList.remove("closing");
+          }, 500);
+        });
+      });
+    });
+  });
+</script>
+
+
+</head>
+
+<body>
+
+<header>
+    <h1>Сөздік</h1>  
+
+    <!-- <section>
+        <form class="search-bar" action="/search" method="get">
+                <input type="search"  placeholder="Search...">
+                <button type="submit">&#128269;</button>
+        </form>
+    </section>    -->
+</header>
+
+<hr>
+
+<main>
+
+
+
+<div> 
+<button type="button" class="open">桶</button>
+<dialog>
+    <h2>桶</h2>
+    <h3>Шелек</h3>
+    <dfn>зат есім;<br>
+     Сұйық ж.б. заттарды тасуға, сақтауға арналған цилиндр пішінді, тұтқасы бар тұрмыстық ыдыс   
+    </dfn>
+    <p>Үйдегі барлық таза <em>桶`терге</em> су толтырдым.</p>
+
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">奶</button>
+<dialog>
+    <h2>奶</h2>
+    <h3>Сүт</h3>
+    <dfn>зат есім;<br>
+      Адам мен сүтқоректі жануарлардың сүт бездерінен бөлінетін, түсі ақ, қоректік мәні жоғары қоректік сұйықтық. 
+      Оның құрамында ағзаға қажетті ақуыз, май, көмірсу (лактоза), дәрумендер мен кальций сияқты минералдар мол.  
+    </dfn>
+    <p><em>奶</em> кальцийдің арқасында сүйек пен тісті қатайтады.</p>
+    
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">与</button>
+<dialog>
+    <h2>与</h2>
+    <h3>Бер.у</h3>
+    <dfn>етістік;<br>
+     Бір затты басқа біреуге ұстату, сыйлау, қайтару немесе тапсыру.
+    Сонымен қатар күрделi етiстiк құрамында көмекшi етiстiк ретінде қолданылады. 
+    </dfn>
+    <p>Бүгін жалдаушыға пәиердің кілтін <em>与`дім</em>.</p>
+
+    <form method="dialog">
+        <div>ұстату,&ensp;тапсыру;</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">供</button>
+<dialog>
+    <h2>供</h2>
+    <h3>Қамт.у</h3>
+    <dfn>етістік;<br>
+    Қажетті затпен, жұмыспен, жағдаймен т.б. нәрсемен қамтамасыз ету. 
+    </dfn>
+    <p>Бір зауыт бүкіл аймақты жұмыспен <em>供`ыған</em>.</p>
+    
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">媼</button>
+<dialog>
+    <h2>媼</h2>
+    <h3>Кемпір</h3>
+    <dfn>зат есім;<br>
+       Жасы ұлғайған, қартайған әйел. 
+       Бұл сөз көбінесе шал сөзіне жұп болып қолданылады.
+    </dfn>
+    <p>Бір топ <em>媼</em> үстелдің басында әңгімелесіп отыр.</p>
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">卵</button>
+<dialog>
+    <h2>卵</h2>
+    <h3>Жұмыртқа</h3>
+    <dfn>зат есім;<br>
+    Құстардың және кейбір басқа жәндіктердің сырты қатты қабықпен қапталған көбею өнімі. 
+    Күнделікті өмірде көбінесе тағам ретінде қолданылатын тауық жұмыртқасы түсініледі.   
+    </dfn>
+    <p>Таңғы асқа екі <em>卵</em> мен бір картоп дайындап жедім.</p>
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">尾</button>
+<dialog>
+    <h2>尾</h2>
+    <h3>Құйрық</h3>
+    <dfn>зат есім;<br>
+    Жануарлар денесінің артқы ұшындағы мүше. 
+    Төрт аяқты малға шыбын-шіркейден қорғануға немесе май жинауға,
+    балықтарға жүзуге, ал
+    кейбір жануарларға тепе-теңдік сақтауға, секіруге мүмкіндік береді.  
+    </dfn>
+    <p>Жылқының <em>尾`ын</em> балшық, тезек, мұздан сақтап кейде байлап тастайды.</p>
+
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">还</button>
+<dialog>
+    <h2>还</h2>
+    <h3>Қайтар.у</h3>
+    <dfn>етістік;<br>
+      Бір нәрсені иесіне беру, немесе орнына қою, немесе бастапқы күйіне қайыру.  
+    </dfn>
+    <p>Жалдаған кітапті кітапханаға апарып <em>还`дым</em>.</p>
+    
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">狼</button>
+<dialog>
+    <h2>狼</h2>
+    <h3>Қасқыр</h3>
+    <dfn>зат есім;<br>
+        Ит тұқымдасына жататын, сүтқоректі, ірі, жыртқыш аң. 
+        狼 басқа ұсақ жыртқыштардың (мысалы, шибөрінің) шамадан тыс көбеюіне шек қойып табиғи тепе-теңдікті сақтайды. 
+        Сонымен қатар әлсіз және ауру жануарларды жою арқылы санитарлық қызмет атқарады.
+    </dfn>
+    <p>Автобуспен Бұрабайдан өткенде <em>狼`ды</em> көрді.</p>
+
+    <form method="dialog">
+        <div>бөрі;</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">村</button>
+<dialog>
+    <h2>村</h2>
+    <h3>Ауыл</h3>
+    <dfn>зат есім;<br>
+       Кішігірім елді мекен. 
+       Адамдары көбінесе мал өсіріп, егін егіп күн көреді. 
+       Бұрын көшпелі кезде бір жерге тігілген киіз үйлердің жиынтығы.
+    </dfn>
+    <p>Кішкентай кезімде <em>村`да</em> апамның қолында өстім.</p>
+    
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">丘</button>
+<dialog>
+    <h2>丘</h2>
+    <h3>Дөң</h3>
+    <dfn>зат есім;<br>
+    Айналасындағы жерден биік орналасқан көтеріңкі, дүңкиген жер бөлігі. 
+    丘 таудан кішірек және аласа. Шыңы онша тік емес, әдетте жалпақтау болады.
+    </dfn>
+    <p>Үйдің маңындағы <em>丘`нен</em> бүкіл айнала алақандай көрінеді.</p>
+    <form method="dialog">
+        <div>дөңес,&ensp;төбе;</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">羊</button>
+<dialog>
+    <h2>羊</h2>
+    <h3>Қой</h3>
+    <dfn>зат есім;<br>
+    Мүйізділер тұқымдасына жататын, күйіс қайыратын, жұптұяқты үй жануары. 
+    羊 – қазақ халқының қасиетті төрт түлік малының бірі, 
+    Ол ет, жүн, тері және сүт өнімдерін беретін аса құнды мал.   
+    </dfn>
+    <p><em>羊-қорадан</em> 20 шақты <em>羊`ды</em> айдап шығарды.</p>
+
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">上</button>
+<dialog>
+    <h2>上</h2>
+    <h3>Үсті</h3>
+<ul>
+    <li>
+     <dfn>зат есім, сын есім, үстеу;<br>
+     Бір заттың немесе кеңістіктің жоғарғы жағы, беті.
+     Және де адамның үсті-басы, тұлабойы, киген киімінің сырты.   
+    </dfn>
+    <p>Үстелдің <em>上`не</em> түрлі тамақ қойды.</p>   
+    </li>
+    <li>
+     <dfn>зат есім, сын есім, үстеу;<br>
+     Адамның үсті-басы, киген киімінің сырты.   
+    </dfn>
+    <p>Цехтан шығып <em>上`мдегі</em> шаңды қақтым.</p>   
+    </li>
+</ul>
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">追</button>
+<dialog>
+    <h2>追</h2>
+    <h3>Қу.у</h3>
+<ul>
+    <li>
+    <dfn>етістік;<br>
+        Біреудің немесе бір нәрсенің соңынан түсу, артынан жүгiру.
+    </dfn>
+    <p>Үзілістегі оқушылар коридорда бір-бірін <em>追`ып</em> жүр.</p>   
+    </li>
+    <li>
+    <dfn>етістік;<br>
+        Қашыру, жолатпау, аластатып шығару.
+    </dfn>
+    <p>Қойдың маңына жолаған қасқырды <em>追`ып</em> жіберді.</p>     
+    </li>
+</ul>
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">叫</button>
+<dialog>
+    <h2>叫</h2>
+    <h3>Айғай.лау<br>Айқай.лау</h3>
+    <dfn>етістік;<br>
+       Қатты дауыспен үн салу. 
+       Адамдар түрлі эмоцияны (ашу, қуаныш, т.б.) білдіру үшін,
+       сонымен қатар алыстағы біреуге белгі беру үшін 叫`лайды.
+    </dfn>
+    <p>Стадиондағы жанкүйерлер өз құрамаларын қолдап <em>叫`лауда</em>.</p>
+    
+    <form method="dialog">
+        <div>бақыру,&ensp;бажылдау;</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">又</button>
+<dialog>
+    <h2>又</h2>
+    <h3>Қайта</h3>
+<ul>
+    <li>
+    <dfn>үстеу;<br>
+      Бір жағдайдың немесе істін қайталануы.  
+    </dfn>
+    <p>Таңертен қар <em>又</em> жауды.</p>    
+    </li>
+    <li>
+    <dfn>үстеу;<br>
+      Керісінше, есесіне.  
+    </dfn>
+    <p>Мәселе азайған жоқ, <em>又</em> көбейді.</p>    
+    </li>
+</ul>
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">骨</button>
+<dialog>
+    <h2>骨</h2>
+    <h3>Сүйек</h3>
+    <dfn>зат есім;<br>
+    Адам мен жануарлардың қанқасын құрайтын, тірек-қимыл жүйесін қамтамасыз ететін және денеге беріктік пен пішін беретін қатты мүше.   
+    </dfn>
+    <p>Ағзадағы <em>骨</em> мықты болуы үшін кальций витамины қажет.</p>
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">娘</button>
+<dialog>
+    <h2>娘</h2>
+    <h3>Қыз</h3>
+    <dfn>зат есім;<br>
+        Жас әйел баласы
+        Бұл сөз кәмелетке жетпеген жас ұрпаққа да, бойжеткенге де айтылады. 
+    </dfn>
+    <p> <em>娘</em> — ұрпақ жалғастырушы, шаңырақ иесі және отбасының жылуы..</p>  
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">雀</button>
+<dialog>
+    <h2>雀</h2>
+    <h3>Балапан</h3>
+    <dfn>зат есім;<br>
+       Жұмыртқадан жаңа шыққан немесе қанаты әлі қатаймаған кез келген құстың баласы. 
+       Сондай-ақ бұл сөз еркелету мәнінде жақын адамға, балаға айтылады. 
+    </dfn>
+    <p><em>雀</em> ұяда не көрсе, ұшқанда соны іледі. (мақал)</p>
+    <form method="dialog">
+        <div>шөже;</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">宮</button>
+<dialog>
+    <h2>宮</h2>
+    <h3>Сарай</h3>
+<ul>
+    <li>
+    <dfn>зат есім;<br>
+    Сәулетті әрі үлкен зәулім үй. 
+    Онда билік ықпалды адамдар тұрады.
+    </dfn>
+    <p>Бұрыңғы әкім қаланың қасында өзіне <em>宮</em> салып алған.</p>   
+    </li>
+    <li>
+    <dfn>зат есім;<br>
+    Қоғамдық маңызы бар әсем ғимарат.
+    Мәдениет сарайы, спорт сарайы, неке сарайы сияқты халық көп жиналатын үлкен әрі әдемі ғимараттар.  
+    </dfn>
+    <p>Қаламызда бірнеше мәдениет <em>宮`ы</em> бар.</p>   
+    </li>
+</ul> 
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">樵</button>
+<dialog>
+    <h2>樵</h2>
+    <h3>Отыншы</h3>
+    <dfn>зат есім;<br>
+    Ағаш шауып, отынды жарып, дайындап сататын адам.
+    </dfn>
+    <p>Орманда <em>別</em> ағаш кесіп жүр.</p>
+
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">魂</button>
+<dialog>
+    <h2>魂</h2>
+    <h3>Жан</h3>
+<ul>
+    <li>
+    <dfn>зат есім;<br>
+    Адамның рухани болмысы, ішкі дүниесі, өмірлік күші, санасы.   
+    </dfn>
+    <p> <em>魂`</em> .</p>    
+    </li>
+    <li>
+    <dfn>зат есім;<br>
+    Жақын көретін адамға еркелету немесе бауыр басу мағынасындағы сөз.   
+    </dfn>
+    <p><em>魂`ым</em>, бір көріп ғашық болдым саған.</p>    
+    </li>
+</ul>
+    <form method="dialog">
+        <div>,&ensp;;</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">魄</button>
+<dialog>
+    <h2>魄</h2>
+    <h3>Рұх</h3>
+<ul>
+    <li>
+    <dfn>зат есім;<br>
+     Рух құрсақтағы баланы тірілтеді, өмір сүргенде оның жаны болады
+     ал өлгенде рухы денеден бөлек кетеді.  Рух сөзінің көпше түрі — "аруақ"
+    </dfn>
+    <p>Күнде бабамның <em>別`ына</em> тағзым етемін.</p>    
+    </li>
+    <li>
+    <dfn>зат есім;<br>
+    Адамның қайрат-жігері, мінезінің қажыр-құаты.
+    </dfn>
+    <p>Сарбаздардың <em>別`тары</em> жоғары.</p>    
+    </li>
+</ul>
+    <form method="dialog">
+        <div>аруақ;</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">別</button>
+<dialog>
+    <h2>別</h2>
+    <h3></h3>
+    <dfn>;<br>
+        
+    </dfn>
+    <p> <em>別`</em> .</p>
+    
+    <form method="dialog">
+        <div>,&ensp;;</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">別</button>
+<dialog>
+    <h2>別</h2>
+    <h3></h3>
+    <dfn>;<br>
+        
+    </dfn>
+    <p> <em>別`</em> .</p>
+    
+    <form method="dialog">
+        <div>,&ensp;;</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+
+</section>
+
+</main>
+
+<hr>
+
+<footer>
+    <nav>
+        <a href="">/Ti</a>        
+        <a href=#noun_top>TOP</a> 
+        <a href="">NEXT</a>
+    </nav> 
+</footer>
+
+</body>
+
+
+<!-- 
+
+ел 国
+халық 民
+ұлт 邦
+тайпа 族
+ру 氏
+мемлекет 國
+國
+国
+邦
+族
+民 
+氏
+鋃 ornek
+璋
+飾 naqishtau
+装 bezen
+ashekeyleu
+-->
+</html>

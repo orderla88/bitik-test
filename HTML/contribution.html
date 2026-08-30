@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8"> 
+    <meta   name="viewport" 
+            content="width=device-width initial-scale=1"> 
+    <link rel="stylesheet" href="../CSS/styles.css"> 
+    <link rel="manifest" href="../manifest.webmanifest">
+    <link rel="icon" type="image/png" sizes="192x192" href="../Assets/Icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../Assets/Icons/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Assets/Icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Assets/Icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Assets/Icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="../Assets/Icons/favicon.ico">
+    <title>Contribution</title>
+
+
+</head>
+
+<body>
+
+<header>
+    <table id="contents" >
+        <caption><h1>Үлес</h1></caption>
+        <tr>
+            <td>&#9632;</td> 
+            <td><a href="#s1">Мәтін </a></td>
+        </tr>
+        <tr>
+            <td>&#9632;</td>
+            <td><a href="#s2">Қаржы</a></td>
+        </tr>                         
+    </table>     
+</header>
+
+<main>
+
+<hr id="s1">
+<section>
+<h2>Мәтін </h2>
+<ul>
+    <li>"<a href="write.html">Жазу</a>" бөліміндегі нұсқаулық бойынша мәтін жазып, оны көрсетілген поштаға жібере аласыз.</li>
+    <li>Еңбегіңіз тексерістен өтіп "<a href="read.html">Оқу</a>" бөліміне енеді.</li>
+</ul>
+<aside>
+    ⚠️&ensp;<a href="explanation.html">Ережеге</a> сай жазылған мәтін ғана сайтқа енеді. 
+</aside>
+<img class="no_shadow" src="../Assets/Images/matin.png" alt="Runic text">
+
+
+</section>
+
+<hr id="s2">
+<section>
+<h2>Қаржы</h2>
+<p> Kaspi Gold &rAarr;&ensp;<button id="copy">4400 4303 2090 3260</button>&ensp;&rAarr; (Ерлан.О) <br>
+    Үлесші адам поштаға аты-жөнін жазса, оған <i>Turik Sharp.ttf</i> фонтын жіберемін (жазу мен қашау).
+
+</p>
+<figure>   
+    <img src="../Assets/Images/tenge_1.jpg" alt="tenge">
+    <img src="../Assets/Images/tenge_2.jpg" alt="tenge">
+    <figcaption>
+        «Күлтегін» ескерткішіне арналған 1000 теңгелік банкнота. 
+        ҚР Ұлттық банкі  2013 жылдың 12 желтоқсанында оны шектеулі тиражбен шығарды.   
+    </figcaption>
+</figure>
+
+</section>
+
+<script>
+  const button = document.getElementById("copy");
+  button.addEventListener("click", () => {
+    const textToCopy = button.innerText;
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        // Instead of alert, update button text
+        button.innerText = "Көшірілді!";
+        setTimeout(() => {
+          button.innerText = textToCopy; // revert after 1.5s
+        }, 1500);
+      })
+      .catch(err => {
+        console.error("Failed to copy text: ", err);
+      });
+  });
+</script>
+</main>
+
+<hr>
+<footer> 
+    <a href="video.html">&Larr;</a>
+    <a href="../index.html">&#8962;</a>        
+    <a href="news.html">&Rarr;</a>    
+</footer> 
+
+</body>
+
+</html>
+
+
+
+<!--  
+
+
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+-->

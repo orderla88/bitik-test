@@ -1,0 +1,268 @@
+/* BROWSER STYLES RESET */
+
+@charset "UTF-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/*developer style.css */
+*, *:before, *:after {box-sizing: inherit;}  
+
+
+html {
+    font-family: "Calibri"  "Noto Sans TC";
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+body {   
+    line-height: 1.5;
+    max-width: 800px;
+    border: solid thick #013;
+    margin: auto; 
+    padding: 1rem; 
+    background-color: #fff;
+    overflow-x: scroll;
+}
+header {
+    font-family: "Calibri", sans-serif;
+    background-color: #fff;
+    color: #013;
+    text-align: center;
+    padding: 20px;
+}
+main {
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0;
+    gap: 1.2rem;
+    justify-content: space-between;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+hr {color: #013;
+    margin: 1rem;
+}
+
+div {
+    flex: 1 1 1;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+div:hover {
+    transform: scale(1.05);
+}
+button.open {
+    font-family: "Noto Sans TC";
+    font-size: 2rem;
+    padding: 0.5rem;
+    background-color: #f5f5f5eb;
+    border: solid #013 thin;
+    color: #013; 
+}
+dialog {
+    font-size: 1rem;
+    border: solid #013 thin;
+    border-radius: 0.5rem;
+    color: #013;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+dialog[open].visible {
+    opacity: 1;
+    transform: scale(1);
+}
+dialog.closing {
+    opacity: 0;
+    transform: scale(0.95);
+}
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+}
+dialog[open].visible::backdrop {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+form {
+    display: flex; 
+    justify-content: space-between;
+} 
+form button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background-color: #f5f5f5eb;
+    border: solid #013 thin;
+    color: #013; 
+}
+form div {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+dfn {font-size: 1.2rem;}
+p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0.3rem 0.5rem;
+}
+em {color: #027;}
+i {font-style: italic;}
+b {font-weight: bold;}
+strong {
+    font-weight: bold;
+    font-style: italic;
+}
+/* LISTS */
+::marker {
+    font-weight: bold;
+    color: inherit;
+}
+ul, ol {margin: 0.5rem;
+    list-style-position: outside;
+}
+
+ul li, ol li {
+    padding-left: 0.3rem;
+}
+li+li {margin-top: 0.5rem;}
+
+
+
+.circled {list-style-type: circle;}
+.hyphenated, .b_less {list-style-type: none;}
+.hyphenated {list-style-position: inside;}
+.hyphenated li:before {
+    content: "\2013";
+    position: absolute;
+    margin-left: -20px;
+  }
+
+/* HEADERS */
+
+h1, h2, h3 {
+    text-align: center;
+}
+h1 {font-size: 3rem;}
+h2 {
+    font-family: "Noto Sans TC";
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 0.3rem;
+}
+li h3 {text-align: left;}
+/* CLASSES */
+
+
+
+/* ID's */
+
+/* SEARCH FIELD */
+
+.search-bar {
+    display: flex; /* Arranges input and button/icon horizontally */
+    align-items: center; /* Vertically aligns items */
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+  }
+  
+  .search-bar input[type="search"] {
+    flex-grow: 1; /* Allows the input to take available space */
+    border: none;
+    outline: none; /* Removes default focus outline */
+    background: transparent;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .search-bar button {
+    background: none;
+    border: solid thin;
+    cursor: pointer;
+    color: #555;
+    font-size: 18px;
+    padding: 1rem;
+  }
+  
+  /* Optional: Focus effect */
+  .search-bar input[type="search"]:focus {
+    box-shadow: 0 0 5px rgba(112, 114, 117, 0.5);
+  }
+
+/* NAVIGATION */
+
+a:link {
+    color:black;
+    text-decoration: none;
+    }
+ a:active {
+    color: black;
+    text-decoration: none;}
+a:visited {
+    color: black;
+    text-decoration: none;}
+a:hover {
+    border-bottom-color: #44546A;
+    text-decoration: none;
+  } 
+
+
+table tr td, table, tr, th, td {border-collapse: collapse;}
+
+table {border: solid thin #013;     
+    margin: 1rem auto;
+    background-color: white;
+
+   }
+th {font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    border: solid thin;
+    padding: 0 1rem;
+}
+td {text-align: left;
+    border: solid thin;
+    white-space: nowrap;
+    padding: 0.3rem 0.5rem;
+    font-size: 1.2rem;
+    }
+tr:nth-child(odd) {background: #f5f5f5ef}

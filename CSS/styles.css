@@ -1,0 +1,355 @@
+/* BROWSER STYLES RESET */
+
+@charset "UTF-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';
+                    content: none;}
+
+
+
+
+    /* DEV STYLES */
+
+*, *:before, *:after {box-sizing: inherit;}
+
+/* Elements */
+   
+html {
+    font-family: "Calibri", sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+    scroll-behavior: smooth;  
+    height: 100%;
+}
+body {
+    font-size: 1rem;
+    font-family: inherit;
+    margin: 0 auto; 
+    padding: 1rem;
+    line-height: 1.5rem;
+    max-width: 720px;
+    border: solid #013 thin;
+    color: #013;   
+    background-color: #f5f5f5eb;
+    overflow-x: scroll;
+}
+section {margin: 2rem auto;} 
+
+p {margin: 0.5rem;}
+
+h3 + p {margin-top: 0.5rem;}  
+
+hr { margin: 1rem;
+    color: #013;}
+
+b {font-weight: bold;}
+
+em {font-style: normal;
+    color: #027;}
+
+i {font-style: italic;}
+
+strong {font-weight: bold;
+        font-style: italic;}
+
+aside {
+    width: fit-content;
+    font-size: 0.9rem;
+    margin: 1rem auto;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    line-height: 1.3rem;
+    border: dotted #013;
+    text-align: center; 
+    background-color: #FFF;
+    }
+sup {
+    font-size: 72%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+    color: darkred;
+}
+sub {bottom: -0.25rem;}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    margin-bottom: 1.7rem;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+}
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    margin-bottom: 1.7rem;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+}
+figure img {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;}
+figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #027;
+}
+
+/*HEADERS*/
+
+h1, h2  {color: darkred;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.3rem;
+        }
+h1 {font-size: 2.5rem;
+    margin: 1.5rem auto;
+}
+h2 {font-size: 1.5rem;
+    margin: 1rem auto;
+}
+h3 {font-size: 1.2rem;
+    margin: 0.5rem;
+    line-height: 1.3rem;
+    color: #013;
+    font-weight: bold;   
+    text-align: center;  
+   } 
+h4 {font-size: 1.2rem;
+    line-height: 1.3rem;
+    margin: 0.5rem;
+    color: #013;
+    font-weight: bold;
+    text-align: left;      
+   } 
+aside h3 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+}
+
+
+/* LISTS */
+::marker {
+    font-weight: bold;
+    color: inherit;
+}
+ul, ol {margin: 0.5rem 1rem;
+    list-style-position: outside;
+}
+li+li {margin-top: 0.5rem;}
+#vl li {margin-bottom: 1.3rem;}
+
+
+.circled {list-style-type: circle;}
+.hyphenated, .b_less {list-style-type: none;}
+.hyphenated {list-style-position: inside;}
+.hyphenated li:before {
+    content: "\2013";
+    position: absolute;
+    margin-left: -20px;
+  }
+
+    /* CLASSES */
+.wrapper {overflow-x: auto;}
+.norm {font-style: normal;}
+.undlnd {text-decoration: underline}
+.ital {font-style: italic;}
+.centered {text-align: center;}
+.no_shadow {box-shadow: none;}
+
+#copy {
+    /* font-weight: bold; */
+    color: #013;
+    /* background-color: #FFF; */
+    padding: 0.2rem;
+    border: solid thin;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.2rem;
+    vertical-align: text-top;
+    transition: transform 0.2s ease-in-out; 
+}
+#copy:active {transform: scale(0.9);}
+
+    
+    /* NAVIGATION */
+
+/* Contents Table */
+
+#contents {
+    color: darkred;
+    margin: 2rem auto;
+    padding: 0;
+    background-color: #f5f5f5eb;
+    margin-bottom: 1rem;
+}
+#contents td, #contents {
+    border: none;
+    text-align: left;
+    padding: 0.5rem 0rem 0.5rem 1rem;
+}
+#contents tr td:first-child {
+    font-size: 0.7rem;
+}
+#contents a {
+    font-size: 1.6rem;
+    color: darkred;
+}
+#contents a:link {
+    text-decoration: none;}
+#contents a:visited {
+    text-decoration: none;}
+#contents a:hover {
+    text-decoration: underline;
+    text-decoration-style: dotted;}  
+#contents  a:active {
+    text-decoration: underline;}
+
+/* Text links */
+
+a {
+    text-decoration:underline;
+    text-decoration-style: dotted;
+    font-size: inherit;
+    font-weight: normal;
+    color: #013;
+    -webkit-tap-highlight-color: transparent; 
+    outline: none;
+    }
+
+a:hover {
+    border-bottom-color: #013;
+    text-decoration: none;
+  }      
+ a:active {
+    text-decoration:underline;
+    color: #013;
+}
+
+/* Footer links */
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 0.7rem;
+}
+footer a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover {
+    text-decoration: none;
+    color: darkred;
+}
+footer a:active {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+  
+    
+/* MARGINS */
+
+/* Top Margins */
+.t_one {margin-top: 1rem;}
+.t_half {margin-top: 0.5rem;}
+.t_third {margin-top: 0.3rem;}
+.t_quart {margin-top: 0.25rem;}
+.t_fifth {margin-top: 0.2rem;}
+
+.tm_fifth {margin-top: -0.2rem;}
+.tm_quart {margin-top: -0.25rem;}
+.tm_third {margin-top: -0.3rem;}
+.tm_half {margin-top: -0.5rem;}
+.tm_one {margin-top: -1rem;}
+
+/* Bottom Margins */
+.b_one {margin-bottom: 1rem;}
+.b_half {margin-bottom: 0.5rem;}
+.b_third {margin-bottom: 0.3rem;}
+.b_quart {margin-bottom: 0.25rem;}
+.b_fifth {margin-bottom: 0.2rem;}
+
+.bm_fifth {margin-bottom: -0.2rem;}
+.bm_quart {margin-bottom: -0.25rem;}
+.bm_third {margin-bottom: -0.3rem;}
+.bm_half {margin-bottom: -0.5rem;}
+.bm_one {margin-bottom: -1rem;}
+
+
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+    html {font-size: 1.25rem; }   
+}
+
+@media screen and (min-width: 768px) {
+    html {font-size: 1.5rem; }
+}
+
+/*
+
+
+
+§
+
+<ul class="hyphenated">
+    <li></li>
+    <li></li>
+</ul>
+
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+
+
+*/

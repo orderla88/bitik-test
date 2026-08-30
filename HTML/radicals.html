@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"> 
+    <meta   name="viewport" 
+            content="width=device-width initial-scale=1"> 
+    <link rel="stylesheet" href="../CSS/radicals.css"> 
+    <script src="../main.js"></script>
+    <title>Radicals</title>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Open dialog on button click
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("button.open");
+      if (!btn) return;
+
+      const container = btn.closest("div");
+      const dialog = container?.querySelector("dialog");
+      if (dialog) {
+        dialog.showModal();
+        dialog.scrollTop = 0;
+        // Force reflow before adding "visible" for animation
+        requestAnimationFrame(() => dialog.classList.add("visible"));
+      }
+    });
+
+    // Overlay click closes with animation
+    document.querySelectorAll("dialog").forEach((dialog) => {
+      dialog.addEventListener("click", (e) => {
+        const rect = dialog.getBoundingClientRect();
+        const inside =
+          e.clientX >= rect.left &&
+          e.clientX <= rect.right &&
+          e.clientY >= rect.top &&
+          e.clientY <= rect.bottom;
+
+        if (!inside) {
+          dialog.classList.add("closing");
+          dialog.classList.remove("visible");
+          setTimeout(() => {
+            dialog.close();
+            dialog.classList.remove("closing");
+          }, 500); // match CSS transition duration
+        }
+      });
+
+      // Animate built-in close buttons too
+      dialog.querySelectorAll("form[method='dialog'] button").forEach((btn) => {
+        btn.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          dialog.classList.add("closing");
+          dialog.classList.remove("visible");
+          setTimeout(() => {
+            dialog.close();
+            dialog.classList.remove("closing");
+          }, 500);
+        });
+      });
+    });
+  });
+</script>
+
+
+</head>
+
+<body>
+
+<header>
+    <h1>Бөлшектер</h1>  
+
+    <!-- <section>
+        <form class="search-bar" action="/search" method="get">
+                <input type="search"  placeholder="Search...">
+                <button type="submit">&#128269;</button>
+        </form>
+    </section>    -->
+</header>
+
+<hr>
+
+<main>
+
+<section id="s1">
+
+    <div> 
+    <button type="button" class="open">⼀</button>
+    <dialog>
+        <h2>⼀</h2>
+        <h3></h3>
+    <table>
+        <tr>
+            <td>Мағынасы</td>
+            <td>бір, көлденең сызық;</td>
+        </tr>
+        <tr>
+            <td>Таңбалар</td>
+            <td><b>三, 万, 世, 子, 与</b>;</td>
+        </tr>
+    </table>
+        <form method="dialog">
+            <button>Жабу</button>
+        </form>
+    </dialog>
+    </div>
+
+    <div> 
+    <button type="button" class="open">⼁</button>
+    <dialog>
+        <h2>⼁</h2>
+        <table>
+        <tr>
+            <td>Мағынасы</td>
+            <td>тік сызық;</td>
+        </tr>
+        <tr>
+            <td>Таңбалар</td>
+            <td><b>个, 中, 丰</b>;</td>
+        </tr>
+    </table>
+        <form method="dialog">
+            <button>Жабу</button>
+        </form>
+    </dialog>
+    </div>
+
+    <div> 
+    <button type="button" class="open">⼂</button>
+    <dialog>
+        <h2>⼂</h2>
+    <table>
+        <tr>
+            <td>Мағынасы</td>
+            <td>нүкте;</td>
+        </tr>
+        <tr>
+            <td>Таңбалар</td>
+            <td><b>犬, 丸, 主, 丹, 太</b>;</td>
+        </tr>
+    </table>
+        <form method="dialog">
+            <button>Жабу</button>
+        </form>
+    </dialog>
+    </div>
+
+    <div> 
+    <button type="button" class="open">⼃</button>
+    <dialog>
+        <h2>⼃</h2>
+    <table>
+        <tr>
+            <td>Мағынасы</td>
+            <td>қиғаш сызық;</td>
+        </tr>
+        <tr>
+            <td>Таңбалар</td>
+            <td><b>乃, 丸, 久, 邦, 友</b>;</td>
+        </tr>
+    </table>
+        <form method="dialog">
+            <button>Жабу</button>
+        </form>
+    </dialog>
+    </div>
+    
+    <div> 
+    <button type="button" class="open">⼄</button>
+    <dialog>
+        <h2>⼄</h2>
+        <table>
+        <tr>
+            <td>Мағынасы</td>
+            <td>екінші;</td>
+        </tr>
+        <tr>
+            <td>Таңбалар</td>
+            <td><b>乞, 乾</b>;</td>
+        </tr>
+    </table>
+        <form method="dialog">
+            <button>Жабу</button>
+        </form>
+    </dialog>
+    </div>
+
+    <div> 
+    <button type="button" class="open">⺃</button>
+    <dialog>
+        <h2>⺃</h2>
+    <table>
+        <tr>
+            <td>Мағынасы</td>
+            <td>екінші;</td>
+        </tr>
+        <tr>
+            <td>Таңбалар</td>
+            <td><b>乱, 乳, 也</b>;</td>
+        </tr>
+    </table>
+        <form method="dialog">
+            <button>Жабу</button>
+        </form>
+    </dialog>
+    </div>
+
+    <div> 
+    <button type="button" class="open">⼅</button>
+    <dialog>
+        <h2>⼅</h2>
+        <table>
+        <tr>
+            <td>Мағынасы</td>
+            <td>ілмек;</td>
+        </tr>
+        <tr>
+            <td>Таңбалар</td>
+            <td><b>事, 争, 了, 予</b>;</td>
+        </tr>
+    </table>
+        <form method="dialog">
+            <button>Жабу</button>
+        </form>
+    </dialog>
+    </div>  
+
+</section>
+
+<hr>
+
+<section id="s2">
+
+
+<div> 
+    <button type="button" class="open">⼆</button>
+    <dialog>
+    <h2>⼆</h2>
+    <h3>Екі</h3>
+    <table>
+    <tr>
+        <td>井</td>
+        <td>云</td>
+        <td>宗</td>
+        <td>共</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+    </dialog>
+</div>
+
+<div> 
+    <button type="button" class="open">⼇</button>
+    <dialog>
+    <h2>⼇</h2>
+    <h3>Қақпақ</h3>
+    <table>
+    <tr>
+        <td>亡</td>
+        <td>京</td>
+        <td>亥</td>
+        <td>亦</td>
+    </tr>
+    </table>   
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+    </dialog>
+</div>
+
+<div> 
+    <button type="button" class="open">⼈</button>
+    <dialog>
+    <h2>⼈</h2>
+    <h3>Адам</h3>
+    <table>
+    <tr>
+        <td>以</td>
+        <td>⼈</td>
+        <td>渴</td>
+        <td>眾</td>
+    </tr>
+    </table> 
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+    </dialog>
+</div>
+
+<div> 
+    <button type="button" class="open">⺅</button>
+    <dialog>
+    <h2>⺅</h2>
+    <h3>Адам</h3>
+    <table>
+    <tr>
+        <td>低</td>
+        <td>住</td>
+        <td>供</td>
+        <td>借</td>
+        <td>作</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+    </dialog>
+</div>
+
+<div> 
+    <button type="button" class="open">𠆢</button>
+    <dialog>
+    <h2>𠆢</h2>
+    <h3>Адам</h3>
+    <table>
+    <tr>
+        <td>全</td>
+        <td>以</td>
+        <td>今</td>
+        <td>哈</td>
+        <td>个</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+    </dialog>
+</div>
+
+<div> 
+    <button type="button" class="open">⼉</button>
+    <dialog>
+    <h2>⼉</h2>
+    <h3>аяқ</h3>
+    <table>
+    <tr>
+        <td>元</td>
+        <td>先</td>
+        <td>兄</td>
+        <td>光</td>
+        <td>売</td>
+    </tr>
+    </table> 
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+    <button type="button" class="open">⼊</button>
+    <dialog>
+    <h2>⼊</h2>
+    <h3>Кіру</h3>
+    <table>
+    <tr>
+        <td>两</td>
+        <td>内</td>
+        <td>込</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+    <button type="button" class="open">⼋</button>
+    <dialog>
+    <h2>⼋</h2>
+    <h3>Сегіз</h3>
+    <table>
+    <tr>
+        <td>六</td>
+        <td>公</td>
+        <td>兵</td>
+        <td>分</td>
+    </tr>
+    </table>  
+</table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼌</button>
+<dialog>
+    <h2>⼌</h2>
+    <h3>Қоршау</h3>
+    <table>
+    <tr>
+        <td>円</td>
+        <td>内</td>
+        <td>巾</td>
+        <td>同</td>
+        <td>商</td>
+    </tr>
+    </table>
+    
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼍</button>
+<dialog>
+    <h2>⼍</h2>
+    <h3>Жабындық</h3>
+    <table>
+    <tr>
+        <td>労</td>
+        <td>写</td>
+        <td>冗</td>
+        <td>冠</td>
+        <td>罕</td>
+    </tr>
+    </table>
+    
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼎</button>
+<dialog>
+    <h2>⼎</h2>
+    <h3>Мұз</h3>
+    <table>
+    <tr>
+        <td>江</td>
+        <td>渴</td>
+        <td>冷</td>
+        <td>次</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼏</button>
+<dialog>
+    <h2>⼏</h2>
+    <h3>Үстел</h3>
+    <table>
+    <tr>
+        <td>凡</td>
+        <td>凪</td>
+        <td>夙</td>
+        <td>冗</td>
+        <td>風</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼐</button>
+<dialog>
+    <h2>⼐</h2>
+    <h3>Қорап</h3>
+    <table>
+    <tr>
+        <td>凶</td>
+        <td>山</td>
+        <td>出</td>
+        <td>凹</td>
+        <td>凼</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼑</button>
+<dialog>
+    <h2>⼑</h2>
+    <h3>Қылыш</h3>
+    <table>
+    <tr>
+        <td>切</td>
+        <td>分</td>
+        <td>初</td>
+        <td>忉</td>
+        <td>刃</td>
+    </tr>
+    </table>   
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⺉</button>
+<dialog>
+    <h2>⺉</h2>
+    <h3>Пышақ</h3>
+    <table>
+    <tr>
+        <td>別</td>
+        <td>利</td>
+        <td>刻</td>
+        <td>割</td>
+        <td>列</td>
+    </tr>
+    </table>  
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼒</button>
+<dialog>
+    <h2>⼒</h2>
+    <h3>Күш</h3>
+    <table>
+    <tr>
+        <td>男</td>
+        <td>動</td>
+        <td>助</td>
+        <td>勉</td>
+        <td>効</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼓</button>
+<dialog>
+    <h2>⼓</h2>
+    <h3>Қаптау</h3>
+    <table>
+    <tr>
+        <td>包</td>
+        <td>匂</td>
+        <td>旬</td>
+        <td>狗</td>
+        <td>渴</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼔</button>
+<dialog>
+    <h2>⼔</h2>
+    <h3>Қасық</h3>
+    <table>
+    <tr>
+        <td>北</td>
+        <td>花</td>
+        <td>指</td>
+        <td>死</td>
+        <td>老</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼕</button>
+<dialog>
+    <h2>⼕</h2>
+    <h3>Қорап</h3>
+    <table>
+    <tr>
+        <td>欧</td>
+        <td>医</td>
+        <td>区</td>
+        <td>匠</td>
+        <td>匝</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼖</button>
+<dialog>
+    <h2>⼖</h2>
+    <h3>Жасыру</h3>
+    <table>
+    <tr>
+        <td>亡</td>
+        <td>忙</td>
+        <td>芒</td>
+        <td>甚</td>
+        <td>茫</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼗</button>
+<dialog>
+    <h2>⼗</h2>
+    <h3>Он</h3>
+    <table>
+    <tr>
+        <td>協</td>
+        <td>午</td>
+        <td>䘚</td>
+        <td>博</td>
+        <td>什</td>
+    </tr>
+    </table> 
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼘</button>
+<dialog>
+    <h2>⼘</h2>
+    <h3>Бақсы</h3>
+    <table>
+    <tr>
+        <td>仆</td>
+        <td>下</td>
+        <td>外</td>
+        <td>扑</td>
+        <td>吓</td>
+    </tr>
+    </table>
+    <div>№</div>
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼙</button>
+<dialog>
+    <h2>⼙</h2>
+    <h3>Мөр</h3>
+    <table>
+    <tr>
+        <td>印</td>
+        <td>却</td>
+        <td>卵</td>
+        <td>節</td>
+        <td>危</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼚</button>
+<dialog>
+    <h2>⼚</h2>
+    <h3>Жартас</h3>
+    <table>
+    <tr>
+        <td>原</td>
+        <td>厚</td>
+        <td>厄</td>
+        <td>厘</td>
+        <td>厙</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼛</button>
+<dialog>
+    <h2>⼛</h2>
+    <h3>Жеке</h3>
+    <table>
+    <tr>
+        <td>弘</td>
+        <td>去</td>
+        <td>伝</td>
+        <td>台</td>
+        <td>么</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼜</button>
+<dialog>
+    <h2>⼜</h2>
+    <h3>Қайта</h3>
+    <table>
+    <tr>
+        <td>報</td>
+        <td>友</td>
+        <td>収</td>
+        <td>取</td>
+        <td>双</td>
+    </tr>
+    </table>
+    
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+</section>
+
+
+<hr>
+<section id="s3">
+
+<div> 
+<button type="button" class="open">⼝</button>
+<dialog>
+    <h2>⼝</h2>
+    <h3> Ауыз</h3>
+    <table>
+    <tr>
+        <td>名</td>
+        <td>局</td>
+        <td>哈</td>
+        <td>如</td>
+        <td>否</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№30</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼞</button>
+<dialog>
+    <h2>⼞</h2>
+    <h3>Шекара</h3>
+    <table>
+    <tr>
+        <td>団</td>
+        <td>国</td>
+        <td>個</td>
+        <td>回</td>
+        <td>因</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼟</button>
+<dialog>
+    <h2>⼟</h2>
+    <h3>Жер</h3>
+    <table>
+    <tr>
+        <td>娃</td>
+        <td>域</td>
+        <td>基</td>
+        <td>者</td>
+        <td>地</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼠</button>
+<dialog>
+    <h2>⼠</h2>
+    <h3>Қызметші</h3>
+    <table>
+    <tr>
+        <td>装</td>
+        <td>仕</td>
+        <td>志</td>
+        <td>壮</td>
+        <td>声</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼡</button>
+<dialog>
+    <h2>⼡</h2>
+    <h3>Еру</h3>
+    <table>
+    <tr>
+        <td>麦</td>
+        <td>夏</td>
+        <td>冬</td>
+        <td>変</td>
+        <td>愛</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼣</button>
+<dialog>
+    <h2>⼣</h2>
+    <h3>Кеш</h3>
+    <table>
+    <tr>
+        <td>移</td>
+        <td>名</td>
+        <td>外</td>
+        <td>多</td>
+        <td>夜</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼤</button>
+<dialog>
+    <h2>⼤</h2>
+    <h3>Үлкен</h3>
+    <table>
+    <tr>
+        <td>犬</td>
+        <td>太</td>
+        <td>天</td>
+        <td>夫</td>
+        <td>奇</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼥</button>
+<dialog>
+    <h2>⼥</h2>
+    <h3>Әйел</h3>
+    <table>
+    <tr>
+        <td>娃</td>
+        <td>妻</td>
+        <td>好</td>
+        <td>姉</td>
+        <td>娘</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼦</button>
+<dialog>
+    <h2>⼦</h2>
+    <h3>Бала</h3>
+    <table>
+    <tr>
+        <td>学</td>
+        <td>字</td>
+        <td>好</td>
+        <td>存</td>
+        <td>季</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼧</button>
+<dialog>
+    <h2>⼧</h2>
+    <h3>Шатыр</h3>
+    <table>
+    <tr>
+        <td>宗</td>
+        <td>家</td>
+        <td>安</td>
+        <td>完</td>
+        <td>定</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼨</button>
+<dialog>
+    <h2>⼨</h2>
+    <h3>Елі (2см)</h3>
+    <table>
+    <tr>
+        <td>団</td>
+        <td>寺</td>
+        <td>守</td>
+        <td>対</td>
+        <td>射</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼩</button>
+<dialog>
+    <h2>⼩, ⺌, ⺍</h2>
+    <h3>Кішкентай</h3>
+    <table>
+    <tr>
+        <td>称</td>
+        <td>少</td>
+        <td>当</td>
+        <td>尚</td>
+        <td>労</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⺐</button>
+<dialog>
+    <h2>⺐</h2>
+    <h3>Ақсақ</h3>
+    <table>
+    <tr>
+        <td>尤</td>
+        <td>尬</td>
+        <td>无</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼫</button>
+<dialog>
+    <h2>⼫</h2>
+    <h3>Дене</h3>
+    <table>
+    <tr>
+        <td>局</td>
+        <td>居</td>
+        <td>屋</td>
+        <td>届</td>
+        <td>屈</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼬</button>
+<dialog>
+    <h2>⼬</h2>
+    <h3>Өскін</h3>
+    <table>
+    <tr>
+        <td>屯</td>
+        <td>逆</td>
+        <td>艸</td>
+        <td>朔</td>
+        <td>芻</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼭</button>
+<dialog>
+    <h2>⼭</h2>
+    <h3>Тау</h3>
+    <table>
+    <tr>
+        <td>帯</td>
+        <td>岩</td>
+        <td>島</td>
+        <td>岸</td>
+        <td>岳</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼮</button>
+<dialog>
+    <h2>川, ⼮</h2>
+    <h3>Өзен</h3>
+    <table>
+    <tr>
+        <td>州</td>
+        <td>巡</td>
+        <td>災</td>
+        <td>圳</td>
+        <td>洲</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼯</button>
+<dialog>
+    <h2>⼯</h2>
+    <h3>Іс</h3>
+    <table>
+    <tr>
+        <td>左</td>
+        <td>差</td>
+        <td>空</td>
+        <td>式</td>
+        <td>功</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼰</button>
+<dialog>
+    <h2>⼰</h2>
+    <h3>Өз</h3>
+    <table>
+    <tr>
+        <td>巻</td>
+        <td>紀</td>
+        <td>記</td>
+        <td>配</td>
+        <td>起</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼱</button>
+<dialog>
+    <h2>⼱</h2>
+    <h3>Мата</h3>
+    <table>
+    <tr>
+        <td>⼱</td>
+        <td>帯</td>
+        <td>布</td>
+        <td>飾</td>
+        <td>帽</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⼲</button>
+<dialog>
+    <h2>⼲</h2>
+    <h3>Құрғақ</h3>
+    <table>
+    <tr>
+        <td>平</td>
+        <td>幸</td>
+        <td>南</td>
+        <td>刊</td>
+        <td>汗</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open">⺓</button>
+<dialog>
+    <h2>⺓</h2>
+    <h3>Қысқа жіп</h3>
+    <table>
+    <tr>
+        <td>幼</td>
+        <td>幽</td>
+        <td>玄</td>
+        <td>糸</td>
+        <td>呦</td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open"></button>
+<dialog>
+    <h2></h2>
+    <h3></h3>
+    <table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open"></button>
+<dialog>
+    <h2></h2>
+    <h3></h3>
+    <table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open"></button>
+<dialog>
+    <h2></h2>
+    <h3></h3>
+    <table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+<div> 
+<button type="button" class="open"></button>
+<dialog>
+    <h2></h2>
+    <h3></h3>
+    <table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    <form method="dialog">
+        <div>№</div>
+        <button>Жабу</button>
+    </form>
+</dialog>
+</div>
+
+</section>
+
+</main>
+
+<hr>
+
+<footer>
+    <nav>
+        <a href="">/Ti</a>        
+        <a href=#noun_top>TOP</a> 
+        <a href="">NEXT</a>
+    </nav> 
+</footer>
+
+</body>
+
+
+<!-- 
+
+<h2></h2>
+    <h3></h3>
+    <table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    <div>№</div>
+
+
+ел 国
+халық 民
+ұлт 邦
+тайпа 族
+ру 氏
+мемлекет 國
+國
+国
+邦
+族
+民 
+氏
+鋃 ornek
+璋
+飾 naqishtau
+装 bezen
+ashekeyleu
+-->
+</html>
