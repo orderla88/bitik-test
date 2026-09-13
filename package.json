@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "google-auth-library": "^10.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "@google-cloud/firestore": "^7.7.0"
+  }
+}

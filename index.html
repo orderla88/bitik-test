@@ -14,7 +14,26 @@
     <link rel="icon" type="image/png" sizes="32x32" href="Assets/Icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Assets/Icons/favicon-16x16.png">
     <link rel="shortcut icon" href="Assets/Icons/favicon.ico">
-    <title>bitik.asia</title>
+    <title>Bitik</title>
+
+
+<script>   
+async function handleCredentialResponse(response) {
+  const jwt = response.credential;
+  try {
+    const res = await fetch("https://bitik-test-<hash>.run.app/auth/google", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ credential: jwt })
+    });
+    const data = await res.json();
+    console.log("Login result:", data);
+  } catch (err) {
+    console.error("Login failed:", err);
+  }
+}
+</script>
 
 </head>
   
@@ -71,9 +90,28 @@
         © 2026 bitik.asia <br>
         All rights reserved. 
     </p>
-    <nav>
+<nav>
         <button id="installBtn">Орнату</button>
         <button id="shareBtn">Бөлісу</button>
+    
+    <div id="g_id_onload"
+        data-client_id="522809989543-tq219q3f03i03pg3qdci6n5khgtksif6.apps.googleusercontent.com"
+        data-context="signin"
+        data-ux_mode="popup"
+        data-callback="handleCredentialResponse"
+        data-auto_select="false"
+        data-itp_support="true">
+    </div>
+
+    <div class="g_id_signin"
+        data-type="standard"
+        data-shape="rectangular"
+        data-theme="filled_blue"
+        data-text="signin_with"
+        data-size="large"
+        data-logo_alignment="left">
+    </div>   
+</nav>
     </nav>  
 </footer> 
 
