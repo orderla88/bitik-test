@@ -133,7 +133,7 @@ nav div {
 }
 
 dialog {
-    font-size: 1.1rem;
+    font-size: 1rem;
     border: solid #013 thick;
     border-radius: 0.5rem;
     color: #013;
@@ -158,13 +158,16 @@ dialog[open].visible::backdrop {
 }
 
 b {font-weight: bold;}
-ul {list-style-type: none;}
+ul {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
 li {margin: 0.5rem auto;}
 
 form {
     display: flex;
     width: 100%;
-    justify-content: right;
+    justify-content: center;
 }
 button {
     display: block;
