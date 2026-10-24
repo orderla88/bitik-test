@@ -1,35 +1,9 @@
-Question to AI:
-Should I 
 
-
-HTML
-- Scripts PDF
+- Hanzi PDF
 - Radicals;
 - Hantzi;
-
-
-CSS  
-- Radicals;
-- Hantzi;
-- GSI button;
-- Payment button;
-
-
-JS
-- GSI button
-- payment button;
-- Hansha Sqlite db
-
- GSI button
- - Code setup;
- - GC console setup;
-
- Code setup
- - index.html - GC Run endpoint;
- - server.js - GC Run setup and upload;
- - auth.js - Client ID and GC Run setup and upload;
- 
-Is JWT_SECRET in server.js same as GOOGLE_CLIENT_SECRET I get with GOOGLE_CLIENT_ID when getting credentials from GC?
+- Install buttons;
+- Hanzi database;
 
 
 
@@ -38,25 +12,10 @@ MOTIVES
 - legacy;
 
 
-Here's the plan for bitik-test repo (repeated for bitik.asia and grammar24.com later):
-1. Set up Github frontend and GC Run and Firestore backend;
-2. Implement and test GSI button;
-4. Implement encryption/decryption logic for content (same as for grammar24)
-5. Test the logic;
-6. Register Paypal business account;
-6. Implement Paypal button;
-7. Test the Paypal button;
-
-folder structure:
- index.html
- .env
- SERVER/
-   server.js
-   dev.db
-   /ROUTES
-      auth.js
 
 
+Skipped Radicals
+- ⿅
 
 
 
