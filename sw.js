@@ -15,10 +15,14 @@ const NETWORK_FIRST_URLS = [
   './HTML/video.html',
   './HTML/news.html',
   './HTML/contribution.html',
+  './HTML/dictionary_1.html',
+  './HTML/radicals.html',
   // CSS folder:
   './CSS/styles.css',
   './CSS/index.css',
   './CSS/read.css',
+  './CSS/dictionary.css',
+  './CSS/radicals.css',
 ];
   const CACHE_FIRST_URLS = [
   './Assets/Images/library.webp',
