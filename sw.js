@@ -1,5 +1,5 @@
 // Version your cache to force updates when you change files
-const APP_CACHE = 'app-cache-v1';
+const APP_CACHE = 'app-cache-v2';
 const ASSET_CACHE = 'asset-cache';
 
 // Precache explicit files (from your list)
@@ -176,11 +176,14 @@ self.addEventListener('install', event => {
   })());
 });
 
-
 // Delete old cache
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys =>
-    Promise.all(keys.filter(key => key.startsWith('app-cache-') && key !== APP_CACHE)
+    Promise.all(keys.filter(key => (
+      key.startsWith('app-cache-') && 
+      key !== APP_CACHE) || 
+      key.startsWith('static-cache-')
+      )
       .map(key => {console.log('Deleting old app cache:', key);
         return caches.delete(key);
       })
