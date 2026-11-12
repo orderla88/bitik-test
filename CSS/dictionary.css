@@ -98,6 +98,8 @@ button.open {
     border: solid #013 thin;
     color: #013; 
 }
+button.open:hover {color: #720000;}
+
 dialog {
     font-size: 1rem;
     border: solid #013 thin;
@@ -191,6 +193,7 @@ h2 {
     font-family: "Noto Sans TC";
     font-size: 3rem;
     margin-top: 1rem;
+    padding-bottom: 0.3rem;
 }
 h3 {
     font-size: 1.4rem;

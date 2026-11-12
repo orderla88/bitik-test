@@ -26,6 +26,7 @@ Skipped Radicals
 - マ
 - 丷
 - 王
+- 𠆢
 
 
 /* SEARCH FIELD */
